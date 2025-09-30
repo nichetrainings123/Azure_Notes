@@ -1,0 +1,122 @@
+What is Azure Governance and its management areas?
+
+Introduction to Azure Cloud Governance
+As with any new technology, it is vital to have the proper cloud governance in place when using Microsoft Azure. The cloud offers many benefits and advantages. Still, if an organization does not correctly implement its frameworks, it will be at risk. The Azure environment provides the perfect platform to facilitate digital innovation, but there are some risks. This blog post will discuss how you can make your organization more successful in the cloud while being mindful of the identity and data risks through Azure’s management areas.
+
+What are the Azure management areas?
+Microsoft defines Azure management as “the tasks and processes required to maintain your business applications and the resources that support them.” The platform has many services and tools that manage your cloud environment entirely. You can think about it like a map that helps take care of all areas needed for effective use of Azure, from deployment through maintenance processes – such as backup and troubleshooting when things don’t go according to plan.
+
+The following diagram illustrates the different areas of management that Microsoft believes are required to maintain any application or resource. For this article, we will focus on Azure Cloud Governance.
+
+Diagram of the disciplines of Management in Azure.
+Diagram of the disciplines of Management in Azure. Source
+Azure Governance Defined
+“Governance” is the framework that determines how your organization conducts business activities from objectives and responsibilities. Azure governance combines different services and capabilities, allowing for managing all your Azure resources at scale and following control guidelines. This works across multiple subscriptions and resource groups. It is based on a combination of identity, Role-Based Access Control (RBAC), policies, and management groups.
+
+According to the Azure Strategy and Implementation Guide, “Azure governance is defined as the processes and mechanisms that are used to maintain control of your applications and resources. They are the strategic priorities in planning your initiatives within your organization”.
+
+With identities as the new perimeter, they are the center focus for the security teams trying to govern their cloud. Providing access to a growing number of technological assets while at the same time monitoring security rules, and compliance risks is a challenge.
+
+As more companies focus on implementing identity and data governance solutions, it is clear that identities and resources will need to be centrally visible across your cloud. 
+
+But, how do you ensure identity and data security while following Azure governance in your environment?
+
+Azure Governance Framework
+Azure Governance, a cloud security framework, is specialized guidelines that encourage security measures for cloud use within Microsoft Azure. The cloud security guidelines often outline the policies, tools, configurations, and rules needed to secure data and identities in the cloud environment.
+
+Azure Governance Security Frameworks are the enforcement of your overall security strategy. Any cloud practitioner knows that securing cloud environments is a challenge. The scale of the cloud allows for exponential growth, with exponential complexity and headaches.
+
+Security is one of the essential parts of your cloud governance plan. You want to enforce least access with everyone when managing your data. With Azure Policy, you can create and set your security policy to meet the least access. The security rules resulting from this security policy are automatically implemented in your environment, and new and existing resources are audited.
+
+By enforcing these policies, you can ensure that your organization complies with your company’s standards and service level agreements.
+
+Services in Azure Governance
+We will describe each of the different services as they apply to this management framework.
+
+Management Groups
+For some, the subscription could be the boundary of management. This boundary allowed organizations to use multiple subscriptions to “separate” resources from each other. Some organizations subscribe geographically, others use a dedicated subscription for a specific application workload, and others separate base on dev/test and production environments. Management groups give you management at scale no matter what type of subscriptions you might have. However, all subscriptions within a single management group must trust the same Azure Active Directory (Azure AD) tenant.
+
+Recently with the introduction of management groups, this model changed. Where Azure Policy and Initiative were great sources of management, they were linked to a single subscription. This was hard to manage in larger environments where admins wanted to replicate security policy settings across multiple subscriptions. That’s precisely what management groups provide: a cross-subscription assignment of Azure Policy and Initiative.
+
+
+Diagram of the management group, subscription, and resource group hierarchy. Source
+
+Identity and RBAC icon
+Identity and RBAC
+Again, identity is vital in a public cloud platform. The examples we saw earlier should already clarify. Still, there is yet another example I can share: Azure itself heavily relies on role-based access control (Azure RBAC) to identify who can do what in the platform.
+
+This “who” can be a person or group from your Active Directory, a user from another Azure Active Directory tenant, or a non-person identity like a registered service principal.
+
+RBAC offers nearly 100 different roles to choose from, and if you cannot find the specific role mapping for the particular need of your organization, you can create custom roles.
+
+
+Azure Policy icon
+Azure Policy
+Another source of oversight is available through Azure Policy. This is a true governance management and control mechanism. As an organization, you define policies: JSON files in which you specify what Azure resource requirements you want to enforce before the deployment of resources can succeed. For example, there is forcing the usage of certain regions because of compliance regulations, or allowing only specific virtual machine sizes in your subscription to keep costs in control, or perhaps you might have particular naming standards you want to enforce for resources, optimizing your asset management and CMDB regulations.
+
+One last example of something that many companies find useful is implementing the use of tags. A tag is like a label attached to a Resource Group or individual resources, for example, a cost center or business unit. Thanks to these tags, a billing administrator can get a clear view of what a resource is used for or which cost center this resource belongs to.
+
+Azure policies can be grouped together into Azure policy initiatives, making it so you can enforce several policies at once. After the policies are defined, they must be assigned to a scope. This scope can be a subscription, a resource group, or individual resources.
+
+
+Azure Blueprints icon
+Azure Blueprints
+Azure Blueprints allow cloud teams to define a structure of reusable, repeatable instructions for deployment and configuration in compliance with company standards, regulations, controls, and requirements.
+
+Relying on a combination of roles, controls, and infrastructure as code, Azure Blueprints orchestrates the full deployment life cycle of resources.
+
+Everything in Azure is based on Azure resources, including dynamic names that you cannot change once created. Other services are deployed in a fixed namespace domain, so it’s important to have naming standards.
+
+Naming standards icon
+Naming standards
+Everything in Azure is based on Azure resources, including dynamic names that you cannot change once created. Other services are deployed in a fixed namespace domain so it’s important to have naming standards.
+
+Resource groups icon
+Resource Groups
+Simply, they are groups of resources.  For the most part, Microsoft is not enforcing what resources should go where and how you want to organize your resource groups. Some organizations have a resource group per resource type, while others define Resource Groups based on workloads or location.
+
+Because most resources on the platform are region-specific, specifying the location is a hard requirement for any resource. Complexity arises when you have a Resource Group in one location while containing resources in a different location. While technically acceptable, this might cause interruptions when the Azure region that the Resource Group is in is not reachable anymore. The resources remain, but you wouldn’t be able to make any changes to the resource.
+
+Possible Issues in Azure Governance
+A lack of governance, or poor governance practices, is the underlying reason behind the failure of most cloud projects. Without solid guard rails or strategy, the following can result:
+
+Unexpected cloud costs: Working in the cloud rather than on-prem means you only pay for the resources you use. If you don’t have a solid governance strategy in place, you may end up with an unpredictable bill every month because you use more resources than you expect.
+
+indirect privilege escalation
+Insecurity: Security is generally the first thing people try to tackle when discussing cloud governance, but it’s also one of the most mismanaged. The most crucial part of security mangement is identities. If you only focus on people as identities, you are likely to miss a big piece of your environment.
+
+
+Lack of controls: Putting security measures in place is more about having controls and warning alarms for when someone is doing something that isn’t permitted. While every company has differing needs and rules, the development and production environments don’t always remain separate. Organizations must understand “who is accessing data.”
+
+
+Resource Inconsistency:  This focuses on establishing policies for the operational management of your environment. It ensures that your resources are configured consistently so that they are discoverable by operations. Azure Resource Manager – an implementation and management service for your resources – enables you to achieve consistency in your resources.
+
+
+Lack of non-person identity management: In the identity baseline, you define authentication and authorization requirements using Azure Active Directory, which only includes person identities. This falls short because non-people identities must be accounted for to govern your cloud effectively.
+
+Simplify Compliance Management
+Using Sonrai Security’s identity security, you can spot questionable access and quickly review access for one to many identities, preventing over-privileged entitlements that can lead to risk.
+
+Sonrai Security’s platform combines data collected from the identity and context synchronization process described above with identity and entitlement data from all application sources to create a single view of all access. Our platform allows for a fully automated and continuous access review process initiation. Changes to access propagate automatically to the dashboard and appropriate teams.
+
+Continuous audit and compliance reporting simplify the process of demonstrating the effectiveness of the identity controls operating across the organization. This significantly reduces the burden on operations teams and improves visibility for the business.
+
+image Azure governance_Simplify compliance management
+Azure Security Tips
+✔️ Do your due diligence before migrating
+Before migrating data or workloads into Azure, ensure your team scours policies and procedures. While most leading cloud providers provide strong backend security measures, you can’t leave anything to chance. It is easier to incorporate security and controls into your plan than it is to backtrack after you launch.
+
+The cloud requires a fundamental change in how your developers and security teams work together. With past security teams, they typically provide late-stage inspections and security before applications move into production. As a result, security was a bit of an afterthought — often leading to production delays and endless patching. Today’s operations models require achieving agility and efficiency, but securely. The only way to accomplish this is to integrate security teams earlier in the development lifecycle. 
+
+✔️ Understand regulatory compliance and controls 
+Make sure your team has a firm understanding of all regulatory and compliance requirements and the right tools to enforce these requirements. If your operations are international, you’ll need to remember that countries tend to have varying requirements when it comes to data.
+
+✔️ Use real-time monitoring 
+It’s critical to have a framework in place to monitor and detect data with so much data being stored in cloud environments. Companies need to use real-time monitoring and alerts to trigger automated actions when suspicious activity occurs or there is a drift to the governance baseline. This helps teams rapidly respond to incidents and keep company assets secure.
+
+✔️ Implement strong identity controls 
+Enterprises must keep a tight watch on person and non-person identities with access to sensitive data. It’s easy to lose visibility into your environments when there are thousands of identities who have access to resources. When you lose visibility of your identities, it can be impossible to detect data breaches. 
+
+The only way to prevent this from happening is to clamp down on identity and data security. Companies should enforce least privilege security measures, tracking all identities across the enterprise and restricting access on an as-needed basis.
+
+
