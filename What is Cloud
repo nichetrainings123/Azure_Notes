@@ -1,0 +1,84 @@
+What is Cloud
+
+The cloud is on-demand access to computing resources (servers, storage, databases, networking, software, analytics, ML, etc.) delivered over the internet by a provider. Instead of owning and running physical hardware, you rent virtualized resources and pay based on usage.
+Why it matters: rapid provisioning, elastic scaling, global reach, lower upfront capital, and managed services that let teams focus on product logic instead of datacenter ops.
+
+Types of cloud (deployment models)
+
+Public cloud — Resources owned and operated by a third-party provider and shared across customers (tenants). Examples: AWS, Azure, Google Cloud.
+Pros: low cost, easy scale, many services. Cons: less control over physical infrastructure.
+
+Private cloud — Single-tenant cloud dedicated to one organization. Can be hosted on-premises or run by a provider.
+Pros: stronger isolation, compliance control. Cons: higher cost/maintenance.
+
+Hybrid cloud — Combination of public + private. Workloads move between them (e.g., burst to public cloud or keep sensitive data on-prem).
+Use case: regulated data on private cloud + dev/test on public cloud.
+
+Community cloud — Shared by several organizations with common needs (e.g., government agencies).
+
+Multi-cloud — Using multiple public cloud providers simultaneously for redundancy, best-of-breed services, or vendor lock-in avoidance.
+
+Cloud service models (what you consume)
+
+IaaS — Infrastructure as a Service
+Virtual machines, networking, block storage. You manage OS, runtime, apps. (e.g., EC2, Compute Engine)
+When to use: full control over environment; lift-and-shift apps.
+
+PaaS — Platform as a Service
+Managed runtime, app platform, databases, dev tooling. You deploy code; provider manages infra. (e.g., Heroku, App Engine, Elastic Beanstalk)
+When to use: focus on app logic, want faster dev cycles.
+
+SaaS — Software as a Service
+Fully-managed applications accessed over web (email, CRM). You use the app; provider manages everything. (e.g., Gmail, Salesforce)
+When to use: ready-made business functionality.
+
+FaaS / Serverless (Function as a Service)
+Event-driven functions billed by execution time (e.g., AWS Lambda). No server management.
+When to use: small event-driven tasks, micro-billing.
+
+CaaS — Container as a Service
+Managed container orchestration (Kubernetes services like EKS/GKE/AKS). You manage containers; provider manages orchestration control plane.
+
+DBaaS, MBaaS, etc. — Managed databases, message queues, ML platforms — provider handles operations.
+
+Billing models (how providers charge)
+
+Pay-as-you-go / On-demand — Pay for actual usage (per-second/minute/hour, per-GB). Flexible, no long-term commitment.
+
+Reserved / Committed — Commit to 1–3 years for lower hourly rates (e.g., Reserved Instances, Committed Use Discounts). Good for predictable workloads.
+
+Spot / Preemptible — Deeply discounted capacity but can be reclaimed by provider with short notice. Ideal for fault-tolerant, batch, or CI workloads.
+
+Subscription / Flat fee — Fixed monthly/yearly fee for software or managed services.
+
+Free tier / Freemium — Limited free usage to try services.
+
+Resource-based billing details to watch:
+
+Compute (VM hours / vCPU-hours)
+
+Storage (GB-month + IOPS in some cases)
+
+Network (egress bytes often charged)
+
+Requests / API calls (serverless functions, DB queries)
+
+Data transfer between regions or outside provider (egress) can be expensive
+
+Cost controls: budgets, alerts, tagging, autoscaling, rightsizing, use of reservations/commitments, and egress reduction (VPC endpoints, caching).
+
+Region and Availability Zone (AZ)
+
+Region — A geographic area (e.g., us-east-1, asia-south1) containing multiple AZs. Regions are isolated for fault tolerance and data residency.
+
+Availability Zone (AZ) — One or more isolated data centers within a region with independent power/networking. AZs are connected with low-latency links.
+
+Key differences & usage:
+
+Single-AZ = lower cost but single point of failure.
+
+Multi-AZ = high availability (replicate services across AZs, e.g., database Multi-AZ).
+
+Multi-region = disaster recovery, lower latency for global users, and data-residency compliance. More complex and costly (replication, eventual consistency design).
+
+Best practice: run stateless services across AZs and keep stateful data replicated (managed DB Multi-AZ, cross-region replicas for DR if required).
